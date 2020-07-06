@@ -38,23 +38,19 @@ public class Program {
 		System.out.print("Enter the employee id that will have salary increase: ");
 		int idTest = sc.nextInt();
 
-		
 		Emplyooe emp = emplyooes.stream().filter(x -> x.getId() == idTest).findFirst().orElse(null);
-		
-		if(emp == null)System.out.println("This id does not exist!");
-		
+
+		if (emp == null)
+			System.out.println("This id does not exist!");
+
 		else {
 			System.out.print("Enter the Percentage: ");
 			double percentage = sc.nextDouble();
 			emp.increaseSalary(percentage);
 		}
-		
-		
-		
-		
 
 		System.out.println();
-		System.out.println("List of Employees:");
+		System.out.println("List of All Employees:");
 		for (Emplyooe emplyooe : emplyooes) {
 			System.out.println(emplyooe);
 		}
